@@ -57,11 +57,14 @@ title: トップページ
 {% endfor %}
 
 ----
-
+{% assign flag1 = true %}
 {% for doc in site.pages %}
+{% if flag1%}
+## 研究活動
+flag1 = false
+{% endif %}
   {% if doc.category == "研究活動" %}
 - [{{ doc.title }}]({{ site.url }}{{ doc.url }})
-    <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
   {% endif %}
 {% endfor %}
 
