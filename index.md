@@ -58,19 +58,10 @@ title: トップページ
 
 ----
 
-{% for item in doclist %}
-## {{ item.title }}
-  {% if item.subfolderitems[0] %}
-    {% for entry in item.subfolderitems %}
-- [{{ entry.page }}]({{ entry.url }})
-            <li><a href="{{ entry.url }}">{{ entry.page }}</a>
-      {% if entry.subsubfolderitems[0] %}
-        {% for subentry in entry.subsubfolderitems %}
-  - [{{ subentry.page }}]({{ subentry.url }})
-                    <li><a href="{{ subentry.url }}">{{ subentry.page }}</a></li>
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
+{% for doc in site.docs %}
+  {% if doc.category == "研究活動" %}
+- [{{ doc.title }}]({{ site.url }}{{ doc.url }})
+    <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
   {% endif %}
 {% endfor %}
 
