@@ -15,7 +15,7 @@ title: トップページ
 のどれかにすると，下のリストに自動的に追加されます．
 
 <div>
-{% if site.data.samplelist.toc2[0] %}
+{% if site.data.samplelist.toc %}
   {% for item in site.data.samplelist.toc2 %}
     <h3>{{ item.title }}</h3>
       {% if item.subfolderitems[0] %}
