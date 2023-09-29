@@ -47,12 +47,13 @@ title: トップページ
 ## site.pages ver2
 ## 研究活動
 {% assign doclist = site.pages | sort: 'url'  %}
-  {% for i in {1..doclist.size} %}
-    {{i}}
-    {% if doclist[i].url contains '%E7%A0%94%E7%A9%B6%E6%B4%BB%E5%8B%95/' %}
+{% assign range = (1..doclist.size) %}
+{% for i in range %}
+  {{i}}
+  {% if doclist[i].url contains '%E7%A0%94%E7%A9%B6%E6%B4%BB%E5%8B%95/' %}
 - [{{ doclist[i].title }}]({{ site.url }}{{ doclist[i].url }})
-    {% endif %}
-  {% endfor %}
+  {% endif %}
+{% endfor %}
 
 # collection
 {{site.collections}}
