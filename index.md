@@ -58,7 +58,7 @@ title: トップページ
 
 ----
 
-{% for doc in site.docs %}
+{% for doc in site.pages %}
   {% if doc.category == "研究活動" %}
 - [{{ doc.title }}]({{ site.url }}{{ doc.url }})
     <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
