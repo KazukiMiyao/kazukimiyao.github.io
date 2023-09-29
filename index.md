@@ -45,11 +45,10 @@ title: トップページ
 {% endfor %}
 
 ## site.pages ver2
-## 研究活動
 {% assign doclist = site.pages | sort: 'url'  %}
 {% assign range = (1..doclist.size) %}
+## 研究活動
 {% for i in range %}
-  {{i}}
   {% if doclist[i].url contains '%E7%A0%94%E7%A9%B6%E6%B4%BB%E5%8B%95/' %}
 - [{{ doclist[i].title }}]({{ site.url }}{{ doclist[i].url }})
   {% endif %}
