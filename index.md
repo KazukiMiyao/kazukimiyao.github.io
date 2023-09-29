@@ -39,6 +39,7 @@ title: トップページ
         ### 遊び
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
       {% else %}
+        ### hoge
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
       {% endif %}
     {% endunless %}
