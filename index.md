@@ -20,12 +20,6 @@ title: トップページ
   -     {{ doc.name }}
 {% endfor %}
 
-## site.posts
-{% assign doclist = site.posts | sort: 'title'  %}
-  {% for doc in doclist %}
-  -     {{ doc.name }}
-{% endfor %}
-
 ## site.pages
 {% assign doclist = site.pages | sort: 'title'  %}
   {% for doc in doclist %}
