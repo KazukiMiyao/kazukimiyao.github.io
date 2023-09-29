@@ -55,7 +55,7 @@ title: トップページ
 {% for doc in site.pages %}
 {% if flag1%}
 ## 研究活動
-flag1 = false
+{% assign flag1 = false %}
 {% endif %}
   {% if doc.category == "研究活動" %}
 - [{{ doc.title }}]({{ site.url }}{{ doc.url }})
