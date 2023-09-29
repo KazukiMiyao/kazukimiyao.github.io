@@ -14,7 +14,7 @@ title: トップページ
 遊び/○○  
 のどれかにすると，下のリストに自動的に追加されます．
 
-
+## site.static_files
 {% assign doclist = site.static_files | sort: 'title'  %}
   {% for doc in doclist %}
   {% unless doc.name == "style.scss" || doc.name == "index.md" %} 
@@ -22,6 +22,13 @@ title: トップページ
   {% endunless %}
 {% endfor %}
 
+## site.pages
+{% assign doclist = site.pages | sort: 'title'  %}
+  {% for doc in doclist %}
+  {% unless doc.name == "style.scss" || doc.name == "index.md" %} 
+  -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.path }})
+  {% endunless %}
+{% endfor %}
 
 ## リンク
 ### 東野研究室公式ページ
