@@ -23,9 +23,24 @@ title: トップページ
 ## site.pages
 {% assign doclist = site.pages | sort: 'title'  %}
   {% for doc in doclist %}
-  {% unless doc.name == "style.scss" || doc.name == "index.md" %} 
-  -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.path }})
-  {% endunless %}
+    {% unless doc.name == "style.scss" || doc.name == "index.md" %} 
+      {& if doc.url contains '研究活動/' &}
+        ### 研究活動
+        -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+      {& endif &}
+      {& if doc.url contains '研究室生活/' &}
+        ### 研究室生活
+        -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+      {& endif &}
+      {& if doc.url contains '計算機管理情報/' &}
+        ### 計算機管理情報
+        -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+      {& endif &}
+      {& if doc.url contains '遊び/' &}
+        ### 遊び
+        -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+      {& endif &}
+    {% endunless %}
 {% endfor %}
 
 ## リンク
