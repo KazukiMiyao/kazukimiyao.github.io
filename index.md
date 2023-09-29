@@ -55,9 +55,6 @@ title: トップページ
   {% endif %}
 {% endfor %}
 
-# collection
-{{site.collections}}
-
 ## リンク
 ### 東野研究室公式ページ
 ### サイボウズ
