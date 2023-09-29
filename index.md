@@ -50,6 +50,8 @@ title: トップページ
 ## 研究活動
 {% for i in range %}
   {% if doclist[i].url contains '%E7%A0%94%E7%A9%B6%E6%B4%BB%E5%8B%95/' %}
+  {% assign dirlist = doclist[i].url | split: "/" %}
+- {{dirlist}}
 - {{doclist[i].dir}}
 - [{{ doclist[i].title }}]({{ site.url }}{{ doclist[i].url }})
   {% endif %}
