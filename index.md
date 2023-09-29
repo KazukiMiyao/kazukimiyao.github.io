@@ -14,35 +14,29 @@ title: トップページ
 遊び/○○  
 のどれかにすると，下のリストに自動的に追加されます．
 
-## site.static_files
-{% assign doclist = site.static_files | sort: 'title'  %}
-  {% for doc in doclist %}
-  {% unless doc.name == "style.scss" || doc.name == "index.md" %} 
-  -     {{ doc.name }}
-  {% endunless %}
-{% endfor %}
-
 ## site.pages
-{% assign doclist = site.pages | sort: 'url'  %}
-  {% for doc in doclist %}
-    {% if doc.name == "style.scss" %}
-    {% elsif doc.url contains '研究活動/' %}
-### 研究活動
-- [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-    {% elsif doc.url contains '研究室生活/' %}
-### 研究室生活
-- [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-    {% elsif doc.url contains '計算機管理情報/' %}
-### 計算機管理情報
-- [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-    {% elsif doc.url contains '遊び/' %}
-### 遊び
-- [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-    {% else %}
-### hoge
-- [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-    {% endif %}
-{% endfor %}
+<div>
+{% if site.config.toc[0] %}
+  {% for item in site.config.toc %}
+    <h3>{{ item.title }}</h3>
+      {% if item.subfolderitems[0] %}
+        <ul>
+          {% for entry in item.subfolderitems %}
+              <li><a href="{{ entry.url }}">{{ entry.page }}</a>
+                {% if entry.subsubfolderitems[0] %}
+                  <ul>
+                  {% for subentry in entry.subsubfolderitems %}
+                      <li><a href="{{ subentry.url }}">{{ subentry.page }}</a></li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endfor %}
+{% endif %}
+</div>
 
 ## site.pages ver2
 {% assign doclist = site.pages | sort: 'url'  %}
