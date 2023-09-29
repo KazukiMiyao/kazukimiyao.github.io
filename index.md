@@ -14,29 +14,10 @@ title: トップページ
 遊び/○○  
 のどれかにすると，下のリストに自動的に追加されます．
 
-<div>
-{% if site.data.samplelist.toc %}
-  {% for item in site.data.samplelist.toc2 %}
-    <h3>{{ item.title }}</h3>
-      {% if item.subfolderitems[0] %}
-        <ul>
-          {% for entry in item.subfolderitems %}
-              <li><a href="{{ entry.url }}">{{ entry.page }}</a>
-                {% if entry.subsubfolderitems[0] %}
-                  <ul>
-                  {% for subentry in entry.subsubfolderitems %}
-                      <li><a href="{{ subentry.url }}">{{ subentry.page }}</a></li>
-                  {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endfor %}
-{% endif %}
-</div>
-
+{% assign doclist = site.pages | sort: 'title'  %}
+  {% for doc in doclist %}
+-     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+{% endfor %}
 
 ## リンク
 ### 東野研究室公式ページ
