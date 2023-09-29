@@ -26,22 +26,22 @@ title: トップページ
 {% assign doclist = site.pages | sort: 'url'  %}
   {% for doc in doclist %}
     {% unless doc.name == "style.scss" %} 
-      {& if doc.url contains '研究活動/' &}
+      {% if doc.url contains '研究活動/' %}
         ### 研究活動
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-      {& endif &}
-      {& if doc.url contains '研究室生活/' &}
+      {% endif %}
+      {% if doc.url contains '研究室生活/' %}
         ### 研究室生活
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-      {& endif &}
-      {& if doc.url contains '計算機管理情報/' &}
+      {% endif %}
+      {% if doc.url contains '計算機管理情報/' %}
         ### 計算機管理情報
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-      {& endif &}
-      {& if doc.url contains '遊び/' &}
+      {% endif %}
+      {% if doc.url contains '遊び/' %}
         ### 遊び
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-      {& endif &}
+      {% endif %}
     {% endunless %}
 {% endfor %}
 
