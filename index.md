@@ -16,8 +16,8 @@ title: トップページ
 
 ## site.pages
 <div>
-{% if site.config.toc[0] %}
-  {% for item in site.config.toc %}
+{% if site.data.navigation.toc[0] %}
+  {% for item in site.data.navigation.toc %}
     <h3>{{ item.title }}</h3>
       {% if item.subfolderitems[0] %}
         <ul>
