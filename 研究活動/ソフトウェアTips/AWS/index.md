@@ -1,6 +1,7 @@
 ---
 layout: default
 title: AWS
+category: 研究活動
 ---
 
 * AWSに関するメモをつらつら書きます [#e05260a7]
