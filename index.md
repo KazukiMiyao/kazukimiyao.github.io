@@ -16,6 +16,7 @@ title: トップページ
 
 {% assign doclist = site.pages | sort: 'title'  %}
   {% for doc in doclist %}
+  {% if doc.name == style.scss || doc.name == index.md %} continue {% endif %}
 -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
 {% endfor %}
 
