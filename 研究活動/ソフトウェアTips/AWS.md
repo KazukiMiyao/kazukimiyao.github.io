@@ -1,6 +1,6 @@
 ---
 layout: default
-title: トップページ
+title: AWS
 ---
 
 * AWSに関するメモをつらつら書きます [#e05260a7]
