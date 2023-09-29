@@ -58,28 +58,21 @@ title: トップページ
 
 ----
 
-<div>
 {% for item in doclist %}
-  <h3>{{ item.title }}</h3>
-    {% if item.subfolderitems[0] %}
-      <ul>
-        {% for entry in item.subfolderitems %}
+## {{ item.title }}
+  {% if item.subfolderitems[0] %}
+    {% for entry in item.subfolderitems %}
 - [{{ entry.page }}]({{ entry.url }})
             <li><a href="{{ entry.url }}">{{ entry.page }}</a>
-              {% if entry.subsubfolderitems[0] %}
-                <ul>
-                {% for subentry in entry.subsubfolderitems %}
+      {% if entry.subsubfolderitems[0] %}
+        {% for subentry in entry.subsubfolderitems %}
   - [{{ subentry.page }}]({{ subentry.url }})
                     <li><a href="{{ subentry.url }}">{{ subentry.page }}</a></li>
-                {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
         {% endfor %}
-      </ul>
-    {% endif %}
-  {% endfor %}
-</div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
 
 ## リンク
 ### 東野研究室公式ページ
