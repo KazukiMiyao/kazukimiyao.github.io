@@ -17,9 +17,7 @@ title: トップページ
 ## site.static_files
 {% assign doclist = site.static_files | sort: 'title'  %}
   {% for doc in doclist %}
-  {% unless doc.name == "style.scss" || doc.name == "index.md" %} 
   -     {{ doc.name }}
-  {% endunless %}
 {% endfor %}
 
 ## site.pages
