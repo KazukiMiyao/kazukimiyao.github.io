@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Acrobat
+category: 研究活動
 ---
 
 
