@@ -44,6 +44,15 @@ title: トップページ
     {% endif %}
 {% endfor %}
 
+## site.pages ver2
+## 研究活動
+{% assign doclist = site.pages | sort: 'url'  %}
+  {% for doc in doclist %}
+    {% if doc.url contains '研究活動/' %}
+- [{{ doc.name }}]({{ site.url }}{{ doc.url }})
+    {% endif %}
+{% endfor %}
+
 ## リンク
 ### 東野研究室公式ページ
 ### サイボウズ
