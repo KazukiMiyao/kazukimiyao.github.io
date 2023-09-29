@@ -2,12 +2,12 @@ toc:
   - title: 研究活動
     subfolderitems:
       - page: ソフトウェアTips
-        url: /ソフトウェアTips
+        url: /研究活動/ソフトウェアTips
         subsubfolderitems:
           - page: Acrobat
-            url: /Acrobat
+            url: /研究活動/ソフトウェアTips/Acrobat
           - page: AWS
-            url: /AWS
+            url: /研究活動/ソフトウェアTips/AWS
       - page: Thing 1
         url: /thing1.html
       - page: Thing 2
