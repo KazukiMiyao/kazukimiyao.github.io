@@ -50,7 +50,7 @@ title: トップページ
   {% for doc in doclist %}
 - {{ doc.url }}
 - [hoge]({{ site.baseurl }}{{ doc.url }})
-    {% if doc.url contains '研究活動/' %}
+    {% if doc.url contains '%E7%A0%94%E7%A9%B6%E6%B4%BB%E5%8B%95/' %}
 - [{{ doc.name }}]({{ site.url }}{{ doc.url }})
     {% endif %}
 {% endfor %}
