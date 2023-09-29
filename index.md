@@ -21,7 +21,7 @@ title: トップページ
 {% endfor %}
 
 ## site.pages
-{% assign doclist = site.pages | sort: 'title'  %}
+{% assign doclist = site.pages | sort: 'url'  %}
   {% for doc in doclist %}
     {% unless doc.name == "style.scss" || doc.name == "index.md" %} 
       {& if doc.url contains '研究活動/' &}
