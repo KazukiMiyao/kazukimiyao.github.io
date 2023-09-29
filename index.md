@@ -14,15 +14,28 @@ title: トップページ
 遊び/○○  
 のどれかにすると，下のリストに自動的に追加されます．
 
-{% for item in site.data.samplelist.toc %}
-<h3>{{ item.title }}</h3>
-  <ul>
-    {% for entry in item.subfolderitems %}
-      <li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+<div>
+{% if site.data.samplelist.toc2[0] %}
+  {% for item in site.data.samplelist.toc2 %}
+    <h3>{{ item.title }}</h3>
+      {% if item.subfolderitems[0] %}
+        <ul>
+          {% for entry in item.subfolderitems %}
+              <li><a href="{{ entry.url }}">{{ entry.page }}</a>
+                {% if entry.subsubfolderitems[0] %}
+                  <ul>
+                  {% for subentry in entry.subsubfolderitems %}
+                      <li><a href="{{ subentry.url }}">{{ subentry.page }}</a></li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     {% endfor %}
-  </ul>
-{% endfor %}
-  
+{% endif %}
+</div>
 
 
 ## リンク
