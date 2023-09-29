@@ -14,6 +14,11 @@ title: トップページ
 遊び/○○  
 のどれかにすると，下のリストに自動的に追加されます．
 
+{% assign doclist = site.pages | sort: 'url'  %}
+  {% for doc in doclist %}
+-     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+  {% endfor %}
+
 ## リンク
 ### 東野研究室公式ページ
 ### サイボウズ
