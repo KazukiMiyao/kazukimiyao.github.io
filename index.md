@@ -14,13 +14,11 @@ title: トップページ
 遊び/○○  
 のどれかにすると，下のリストに自動的に追加されます．
 
-
 {% assign doclist = site.pages | sort: 'title'  %}
   {% for doc in doclist %}
   {% if doc.name == "style.scss" || doc.name == "index.md" %} (% continue %} {% endif %}
 -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
 {% endfor %}
-
 
 
 ## リンク
