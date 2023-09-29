@@ -29,17 +29,16 @@ title: トップページ
       {% if doc.url contains '研究活動/' %}
         ### 研究活動
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-      {% endif %}
-      {% if doc.url contains '研究室生活/' %}
+      {% elsif doc.url contains '研究室生活/' %}
         ### 研究室生活
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-      {% endif %}
-      {% if doc.url contains '計算機管理情報/' %}
+      {% elsif doc.url contains '計算機管理情報/' %}
         ### 計算機管理情報
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
-      {% endif %}
-      {% if doc.url contains '遊び/' %}
+      {% elsif doc.url contains '遊び/' %}
         ### 遊び
+        -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+      {% else %}
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
       {% endif %}
     {% endunless %}
