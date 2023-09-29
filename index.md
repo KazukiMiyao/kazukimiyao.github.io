@@ -46,16 +46,36 @@ title: トップページ
 
 ## site.pages ver2
 {% assign doclist = site.pages | sort: 'url'  %}
-{% assign range = (1..doclist.size) %}
+{% assign range = (0..doclist.size) %}
 ## 研究活動
 {% for i in range %}
   {% if doclist[i].url contains '%E7%A0%94%E7%A9%B6%E6%B4%BB%E5%8B%95/' %}
   {% assign dirlist = doclist[i].url | split: "/" %}
-- {{dirlist}}
-- {{doclist[i].dir}}
+- {{dirlist[1]}}
 - [{{ doclist[i].title }}]({{ site.url }}{{ doclist[i].url }})
   {% endif %}
 {% endfor %}
+
+<div>
+{% for item in doclist %}
+  <h3>{{ item.title }}</h3>
+    {% if item.subfolderitems[0] %}
+      <ul>
+        {% for entry in item.subfolderitems %}
+            <li><a href="{{ entry.url }}">{{ entry.page }}</a>
+              {% if entry.subsubfolderitems[0] %}
+                <ul>
+                {% for subentry in entry.subsubfolderitems %}
+                    <li><a href="{{ subentry.url }}">{{ subentry.page }}</a></li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endfor %}
+</div>
 
 ## リンク
 ### 東野研究室公式ページ
