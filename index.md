@@ -48,7 +48,7 @@ title: トップページ
 ## 研究活動
 {% assign doclist = site.pages | sort: 'url'  %}
   {% for doc in doclist %}
-- {{doc.url}}
+- {{ site.baseurl }}{{ doc.url }}
     {% if doc.url contains '研究活動/' %}
 - [{{ doc.name }}]({{ site.url }}{{ doc.url }})
     {% endif %}
