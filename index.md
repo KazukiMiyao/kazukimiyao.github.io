@@ -64,12 +64,12 @@ title: トップページ
     {% if item.subfolderitems[0] %}
       <ul>
         {% for entry in item.subfolderitems %}
-- [{{ entry.title }}]({{ entry.url }})
+- [{{ entry.page }}]({{ entry.url }})
             <li><a href="{{ entry.url }}">{{ entry.page }}</a>
               {% if entry.subsubfolderitems[0] %}
                 <ul>
                 {% for subentry in entry.subsubfolderitems %}
-  - [{{ subentry.title }}]({{ subentry.url }})
+  - [{{ subentry.page }}]({{ subentry.url }})
                     <li><a href="{{ subentry.url }}">{{ subentry.page }}</a></li>
                 {% endfor %}
                 </ul>
