@@ -27,25 +27,20 @@ title: トップページ
   {% for doc in doclist %}
     {% if doc.name == "style.scss" %}
     {% elsif doc.url contains '研究活動/' %}
-      ### 研究活動
-      - {{ doc.name }}
-      -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+### 研究活動
+- [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
     {% elsif doc.url contains '研究室生活/' %}
-      ### 研究室生活
-      - {{ doc.name }}
-      -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+### 研究室生活
+- [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
     {% elsif doc.url contains '計算機管理情報/' %}
-      ### 計算機管理情報
-      - {{ doc.name }}
-      -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+### 計算機管理情報
+- [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
     {% elsif doc.url contains '遊び/' %}
-      ### 遊び
-      - {{ doc.name }}
-      -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+### 遊び
+- [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
     {% else %}
-      ### hoge
-      - {{ doc.name }}
-      -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
+### hoge
+- [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
     {% endif %}
 {% endfor %}
 
