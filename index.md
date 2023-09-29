@@ -15,7 +15,7 @@ title: トップページ
 のどれかにすると，下のリストに自動的に追加されます．
 
 
-{% assign doclist = site.pages | sort: 'title'  %}
+{% assign doclist = site.static_files | sort: 'title'  %}
   {% for doc in doclist %}
   {% unless doc.name == "style.scss" || doc.name == "index.md" %} 
   -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
