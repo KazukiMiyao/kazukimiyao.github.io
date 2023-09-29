@@ -56,6 +56,8 @@ title: トップページ
   {% endif %}
 {% endfor %}
 
+----
+
 <div>
 {% for item in doclist %}
   <h3>{{ item.title }}</h3>
