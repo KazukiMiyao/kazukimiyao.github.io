@@ -17,13 +17,15 @@ title: トップページ
 ## site.static_files
 {% assign doclist = site.static_files | sort: 'title'  %}
   {% for doc in doclist %}
+  {% unless doc.name == "style.scss" || doc.name == "index.md" %} 
   -     {{ doc.name }}
+  {% endunless %}
 {% endfor %}
 
 ## site.pages
 {% assign doclist = site.pages | sort: 'url'  %}
   {% for doc in doclist %}
-    {% unless doc.name == "style.scss" || doc.name == "index.md" %} 
+    {% unless doc.name == "style.scss" %} 
       {& if doc.url contains '研究活動/' &}
         ### 研究活動
         -     [{{ doc.name }}]({{ site.baseurl }}{{ doc.url }})
