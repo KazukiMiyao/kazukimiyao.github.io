@@ -49,7 +49,7 @@ title: トップページ
 {% assign doclist = site.pages | sort: 'url'  %}
   {% for doc in doclist %}
     {% if doc.url contains '%E7%A0%94%E7%A9%B6%E6%B4%BB%E5%8B%95/' %}
-- [{{ doc.name }}]({{ site.url }}{{ doc.url }})
+- [{{ doc.title }}]({{ site.url }}{{ doc.url }})
     {% endif %}
   {% endfor %}
 
