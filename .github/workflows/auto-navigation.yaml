@@ -16,7 +16,7 @@ jobs:
     permissions: write-all
     defaults:
       run:
-        working-directory: /
+        working-directory: kazukimiyao.github.io
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
