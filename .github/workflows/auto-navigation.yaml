@@ -21,4 +21,4 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Build Navigation
-      run: ls
+      run: tree
