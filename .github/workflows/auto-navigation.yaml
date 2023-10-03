@@ -16,9 +16,9 @@ jobs:
     permissions: write-all
     defaults:
       run:
-        working-directory: /home/runner/work/
+        working-directory: /home/runner/work/_PipelineMapping/KazukiMiyao/kazukimiyao.github.io
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
     - name: Build Navigation
-      run: tree
+      run: cat PipelineFolder.json
